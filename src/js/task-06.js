@@ -3,18 +3,20 @@ const inputEl = document.querySelector('input');
 console.log(inputEl);
 
 inputEl.addEventListener('blur', onInputLengthValue);
-const inputValue = inputEl.getAttribute('data-length');
-
-console.log(inputValue);
 
 
 function onInputLengthValue(event) {
-  if (event.currentTarget.value.length < inputValue || event.currentTarget.value.length > inputValue) {
-    inputEl.classList.add('invalid');
-  } else {
-    inputEl.classList.remove('invalid');
+  const inputDataLength = Number(inputEl.dataset.length);
+  const inputValueLength = Number(inputEl.value.trim().length);
+
+if (inputValueLength === inputDataLength) {
     inputEl.classList.add('valid');
-}
+    inputEl.classList.remove('invalid');
+  } else {
+    inputEl.classList.remove('valid');
+    inputEl.classList.add('invalid');
+  }
+
 }; 
 
 

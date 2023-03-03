@@ -12,14 +12,14 @@ function onFormSubmit(event) {
     alert('необходимо заполнить поле Email');
     return;
   } else {
-    email = formTargetEl.email.value;
+    email = formTargetEl.email.value.trim();
   };
 
   if (formTargetEl.password.value === '') {
     alert('необходимо заполнить поле Password');
     return;
   } else {
-    password = formTargetEl.password.value;
+    password = formTargetEl.password.value.trim();
   };
    
   const formData = {
