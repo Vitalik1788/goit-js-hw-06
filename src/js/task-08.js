@@ -8,18 +8,18 @@ function onFormSubmit(event) {
   let email = ''; 
   let password = '';
 
-  if (formTargetEl.email.value === '') {
+  if (formTargetEl.email.value.trim() === '') {
     alert('необходимо заполнить поле Email');
     return;
   } else {
-    email = formTargetEl.email.value.trim();
+    email = formTargetEl.email.value;
   };
 
-  if (formTargetEl.password.value === '') {
+  if (formTargetEl.password.value.trim() === '') {
     alert('необходимо заполнить поле Password');
     return;
   } else {
-    password = formTargetEl.password.value.trim();
+    password = formTargetEl.password.value;
   };
    
   const formData = {
